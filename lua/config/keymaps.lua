@@ -17,5 +17,4 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copiar línea al sistema" })
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Salir a Normal Mode" })
 
 -- Mapeo para que Control+7 (que la terminal envía como ^_) funcione como Control+/
-vim.keymap.set("n", "<C-_>", "<C-/>", { remap = true, desc = "Fix Ctrl+7 mapping" })
-vim.keymap.set("t", "<C-_>", "<C-/>", { remap = true, desc = "Fix Ctrl+7 mapping" })
+vim.keymap.set({ "n", "t" }, "<C-_>", "<cmd>LazyVim term<cr>", { desc = "Terminal Flotante" })
