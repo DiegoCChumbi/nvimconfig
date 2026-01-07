@@ -16,5 +16,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copiar línea al sistema" })
 -- Mapear 'jj' para que funcione como Esc en Insert Mode
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Salir a Normal Mode" })
 
--- Mapeo para que Control+7 (que la terminal envía como ^_) funcione como Control+/
-vim.keymap.set({ "n", "t" }, "<C-_>", "<cmd>LazyVim term<cr>", { desc = "Terminal Flotante" })
+vim.keymap.set({ "n", "t" }, "<C-_>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal Flotante (Ctrl+7)" })
