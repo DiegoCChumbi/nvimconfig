@@ -6,7 +6,7 @@ return {
     },
     keys = {
       {
-        "<c-_>",
+        "<c-\\>",
         function()
           Snacks.terminal.toggle(nil, { cwd = LazyVim.root() })
         end,
